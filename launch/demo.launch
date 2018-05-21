@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<launch>
+
+ <node pkg="demonstrated_trajectory_recorder" type="_demonstrated_trajectory_recorder_node"
+          name="demonstrated_trajectory_recorder" output="screen">
+
+    <!-- the node cycle rate (in hz) -->
+
+    <remap from="~event_in" to="/demonstrated_trajectory_recorder/event_in"/>
+    <remap from="~event_out" to="/demonstrated_trajectory_recorder/event_out"/>
+    
+
+
+ </node>
+</launch>
+
+
