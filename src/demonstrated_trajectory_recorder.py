@@ -35,7 +35,7 @@ class record_trajectories():
         self.camera = cv2.VideoCapture(1)
         ret, img = self.camera.read()
         cv2.imshow("debug", img) 
-        with open('../data/'+'camera_calibration.yaml') as f:
+        with open('../data/'+'camera_calibration_asus.yaml') as f:
             loadeddict = yaml.load(f)
         mtx = loadeddict.get('camera_matrix')
         dist = loadeddict.get('dist_coeff')
