@@ -43,7 +43,7 @@ class record_trajectories():
         h,  w = 480, 640
         self.newcameramtx, self.roi=cv2.getOptimalNewCameraMatrix(self.mtx, self.dist,(w,h),1,(w,h))
 
-        self.image_sub = rospy.Subscriber("/arm_cam3d/rgb/image_raw", Image, self.image_callback)
+        self.image_sub = rospy.Subscriber("/hsrb/head_rgbd_sensor/rgb/image_raw", Image, self.image_callback)
         self.bridge = cv_bridge.CvBridge()
         self.image_recieved = False          
         self.path_publisher = rospy.Publisher('/recorded_path', Path, queue_size=1)
@@ -109,7 +109,7 @@ class record_trajectories():
 
                     pose_stmpd = PoseStamped()
 
-                    pose_stmpd.header.frame_id = "arm_cam3d_rgb_frame"
+                    pose_stmpd.header.frame_id = "head_rgbd_sensor_rgb_frame"
                     pose_stmpd.pose = pose_temp
                     while True:
                         try :
